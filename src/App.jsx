@@ -66,7 +66,12 @@ export default function App() {
       <input type="file" accept="application/pdf,image/*" onChange={handleUpload} />
       {fileName && <p>Arquivo enviado: <strong>{fileName}</strong></p>}
       {loading && <p style={{ color: 'blue' }}>Analisando o conteúdo do arquivo...</p>}
-
+      {ocrText && (
+  <div className="text-sm bg-gray-100 p-3 rounded-md whitespace-pre-wrap">
+    <h3 className="font-semibold mb-1">Texto lido via OCR:</h3>
+    {ocrText}
+  </div>
+)}
       {analysis && (
         <div style={{ marginTop: 30 }}>
           <h2>Resultado da Análise</h2>
